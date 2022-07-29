@@ -175,7 +175,7 @@ main .background-clouds .cloud:nth-child(2) {
   height: 1500px;
   top: -100px;
   left: -150px;
-  animation: moveCloud 15s linear infinite;
+  animation: moveCloud 20s linear infinite;
 }
 main .background-clouds .cloud:nth-child(3) {
   width: 1800px;
@@ -224,7 +224,7 @@ main .background-clouds .cloud:nth-child(9) {
   height: 2900px;
   top: 3000px;
   left: -600px;
-  animation: moveCloud 25s linear infinite;
+  animation: moveCloud 65s linear infinite;
 }
 main .background-clouds .cloud:nth-child(10) {
   width: 1500px;
@@ -238,21 +238,21 @@ main .background-clouds .cloud:nth-child(11) {
   height: 1800px;
   top: 2500px;
   left: -150px;
-  animation: moveCloud 80s linear infinite;
+  animation: moveCloud 85s linear infinite;
 }
 main .background-clouds .cloud:nth-child(12) {
   width: 2000px;
   height: 2000px;
   top: 3500px;
   left: -500px;
-  animation: moveCloud 95s linear infinite;
+  animation: moveCloud 100s linear infinite;
 }
 main .background-clouds .cloud:nth-child(13) {
   width: 1300px;
   height: 1300px;
   top: 2000px;
   left: 200px;
-  animation: moveCloud 70s linear infinite;
+  animation: moveCloud 55s linear infinite;
 }
 main .background-clouds .cloud:nth-child(14) {
   width: 1100px;
@@ -266,7 +266,7 @@ main .background-clouds .cloud:nth-child(15) {
   height: 800px;
   top: 4000px;
   left: 100px;
-  animation: moveCloud 20s linear infinite;
+  animation: moveCloud 25s linear infinite;
 }
 main .background-clouds .cloud:nth-child(16) {
   width: 2000px;
@@ -280,7 +280,7 @@ main .background-clouds .cloud:nth-child(17) {
   height: 1300px;
   top: 1800px;
   left: 200px;
-  animation: moveCloud 80s linear infinite;
+  animation: moveCloud 75s linear infinite;
 }
 main .background-clouds .cloud:nth-child(18) {
   width: 1100px;
@@ -303,6 +303,48 @@ main .background-clouds .cloud:nth-child(20) {
   left: 100px;
   animation: moveCloud 40s linear infinite;
 }
+main .background-clouds .cloud:nth-child(21) {
+  width: 6400px;
+  height: 6400px;
+  top: -150px;
+  left: -1500px;
+  animation: moveCloud 90s linear infinite;
+}
+main .background-clouds .cloud:nth-child(21) {
+  width: 6400px;
+  height: 6400px;
+  top: -450px;
+  left: -1500px;
+  animation: moveCloud 50s linear infinite;
+}
+main .background-clouds .cloud:nth-child(22) {
+  width: 6400px;
+  height: 6400px;
+  top: 450px;
+  left: -1500px;
+  animation: moveCloud 50s linear infinite;
+}
+main .background-clouds .cloud:nth-child(23) {
+  width: 6400px;
+  height: 6400px;
+  top: 750px;
+  left: -1500px;
+  animation: moveCloud 90s linear infinite;
+}
+main .background-clouds .cloud:nth-child(24) {
+  width: 6400px;
+  height: 6400px;
+  top: 4750px;
+  left: -1500px;
+  animation: moveCloud 90s linear infinite;
+}
+main .background-clouds .cloud:nth-child(25) {
+  width: 6400px;
+  height: 6400px;
+  top: 5250px;
+  left: -1500px;
+  animation: moveCloud 90s linear infinite;
+}
 
 @keyframes moveCloud {
   0% {
@@ -311,7 +353,7 @@ main .background-clouds .cloud:nth-child(20) {
   }
   100% {
     /* transform: rotate(360deg); */
-    transform: translateX(2500px);
+    transform: translateX(3000px);
   }
 }
 .loader-wrapper {
@@ -534,7 +576,7 @@ header .background-fill {
 }
 header .background-fill #headline_container {
   position: relative;
-  top: 250px;
+  top: 150px;
   left: 38%;
   width: 500px;
   height: 400px;
@@ -546,7 +588,7 @@ header .background-fill #headline_container {
 header .background-fill #headline_container #title {
   color: white;
   font-weight: 100;
-  font-size: 10rem;
+  font-size: 9rem;
   text-shadow: 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white;
 }
 header .background-fill #headline_container #subtitle {
@@ -599,6 +641,7 @@ header .background-fill #headline_container #subtitle {
   height: 12px;
   background: grey;
   border: 2px solid black;
+  border-radius: 50%;
 }
 .player .wrapper .buttons {
   margin-right: 1rem;
