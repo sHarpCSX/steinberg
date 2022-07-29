@@ -1,0 +1,43 @@
+#introduction {
+  position: absolute;
+  top: 1400px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  max-height: 300px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  #introduction_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #introduction-left_container {
+      position: relative;
+      top: -50px;
+      padding: 3rem;
+
+      p {
+        margin-top: 1rem;
+        color: $primary-color-blackbg;
+        font-size: 2rem;
+      }
+    }
+    #introduction-right_container {
+      position: relative;
+      text-align: right;
+      top: 22px;
+      padding: 3rem;
+      padding-left: 5rem;
+      p {
+        color: $primary-color-blackbg;
+        font-size: 2rem;
+      }
+    }
+  }
+}

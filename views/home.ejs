@@ -1,0 +1,123 @@
+<%- include('includes/head') %>
+
+  <body>
+    <aside>
+      <div id="start">
+        <div class="welcoming_container">
+          <p>Herzlichen Willkommen bei Steinberg</p>
+          <br>
+          <br>
+          <p>Möchten Sie unsere Webseite mit athmosphärischer Musik erkunden?</p>
+        </div>
+        <div id="question_container">
+          <div class="question" id="audio-enable_btn">
+            <a> Ja, sehr gerne.</a>
+          </div>
+          <div class="question" id="audio-disable_btn">
+            <a> Nein, heute nicht.</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- <header style="display: none;">
+    <div id="header-container">
+      <h1>Steinberg</h1>
+      <p>solutions</p>
+    </div>
+    <div class="loader-wrapper" style="display: none">
+      <div class="loader">
+        <div class="sq">
+          <div class="stone">
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="loading-container">
+          <p class="loading">Loading</p>
+          <p class="dot">...</p>
+        </div>
+      </div>
+    </div>
+  </header> -->
+    <!-- Header -->
+    <header>
+      <div class="background-fill">
+        <div id="headline_container">
+          <h1 id="title">stein[berg]</h1>
+          <h2 id="subtitle">solutions</h2>
+        </div>
+      </div>
+
+      <div class="player">
+        <div class="wrapper">
+          <div class="buttons">
+            <div class="playpause-track" onclick="playpauseTrack()">
+              <i class="fa-solid fa-circle-play fa-xl"></i>
+
+            </div>
+          </div>
+          <div class="details">
+            <div class="track-name">
+              <p>
+                Danheim - Ulvekald
+              </p>
+            </div>
+          </div>
+          <div class="slider_container">
+            <div class="volume_container">
+              <i class="fa-solid fa-volume-high fa-2x1" id="volumeHighIcon"></i>
+            </div>
+            <input type="range" min="0" max="100" value="20" class="volume_slider" onchange="setVolume()">
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+
+      <!-- Background animation -->
+      <%- include ('./includes/background-clouds') %>
+
+        <!-- Layout -->
+        <%- include ('./includes/layout') %>
+
+          <!-- Content -->
+          <section id="introduction">
+            <div id="introduction_container">
+              <div id="introduction-left_container">
+                <p>Steinberg</p>
+                <br>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto hic sequi nihil atque. Officia
+                  aliquid
+                  minima nostrum accusamus labore ex consequatur rem incidunt dignissimos! Quod nulla laborum ipsum
+                  commodi
+                  neque? </p>
+              </div>
+              <div id="introduction-right_container">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto hic sequi nihil atque. Officia
+                  aliquid
+                  minima nostrum accusamus labore ex consequatur rem incidunt dignissimos! Quod nulla laborum ipsum
+                  commodi
+                  neque? </p>
+                <br>
+                <p style="margin-left:22rem;">Steinberg</p>
+              </div>
+
+            </div>
+          </section>
+          <section id="services">
+            <div id="services_container">
+              <div id="left-circle">
+                <p>Konzeption</p>
+                <p>Design</p>
+                <p>Development</p>
+              </div>
+            </div>
+
+          </section>
+          <section id="explanation"></section>
+          <section id="projects"></section>
+          <section id="footer"></section>
+
+    </main>
+  </body>
+
+  </html>
