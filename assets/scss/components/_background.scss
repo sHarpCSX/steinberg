@@ -1,0 +1,48 @@
+@use "../abstracts/index" as a;
+
+.background-clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+  .cloud {
+    position: absolute;
+    filter: brightness(0) saturate(100%) invert(23%) sepia(24%) saturate(827%)
+      hue-rotate(137deg) brightness(98%) contrast(99%);
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Smoke-Element.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+  }
+  .cloud:nth-child(1) {
+    width: 2900px;
+    height: 2900px;
+    top: -600px;
+    left: -600px;
+    animation: moveCloud 25s linear infinite;
+  }
+  .cloud:nth-child(2) {
+    width: 1500px;
+    height: 1500px;
+    top: -100px;
+    left: -150px;
+    animation: moveCloud 20s linear infinite;
+  }
+}
+
+@keyframes moveCloud {
+  0% {
+    /* transform: rotate(0deg); */
+    transform: translateX(-1800px);
+  }
+  100% {
+    /* transform: rotate(360deg); */
+    transform: translateX(3000px);
+  }
+}

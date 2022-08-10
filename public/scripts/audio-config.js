@@ -12,6 +12,8 @@ const main = document.querySelector("main");
 let isPlaying = false;
 let track_index = 0;
 let curr_track = document.createElement("audio");
+let previousVolume;
+let previousSliderValue;
 
 const music_list = [
   { name: "Danheim - Ulvekald", source: "/audio/danheim.mp3" },
@@ -36,7 +38,6 @@ function playTrack() {
   setVolume();
   isPlaying = true;
   playpause_btn.innerHTML = '<i class="fa-solid fa-circle-pause fa-xl"></i>';
-  console.log("test");
 }
 function pauseTrack() {
   curr_track.pause();
@@ -52,7 +53,7 @@ function setVolume() {
     volumeIcon.innerHTML =
       '<i class="fa-solid fa-volume-high fa-2x1" id="volumeHighIcon"></i>';
   } else {
-    if (curr_track.volume == 0) {
+    if (curr_track.volume === 0) {
       volumeIcon.innerHTML = '<i class="fa-solid fa-volume-xmark fa-2x1"></i>';
     } else {
       volumeIcon.innerHTML =
@@ -61,19 +62,32 @@ function setVolume() {
   }
 }
 
-function enableAudio() {
+function toggleVolume() {
+  if (curr_track.volume === 0) {
+    curr_track.volume = previousVolume;
+    volume_slider.value = previousSliderValue;
+    setVolume();
+  } else {
+    previousVolume = curr_track.volume;
+    previousSliderValue = volume_slider.value;
+    curr_track.volume = 0;
+    volume_slider.value = 0;
+    setVolume();
+  }
+}
+
+function showPage() {
   startPage.style.display = "none";
-  player.style.display = "block";
-  header.style.display = "block";
   main.style.display = "block";
+  header.style.display = "flex";
+}
+
+function enableAudio() {
+  showPage();
+  player.style.display = "flex";
   playTrack();
 }
 
-function disableAudio() {
-  startPage.style.display = "none";
-  header.style.display = "block";
-  main.style.display = "block";
-}
-
 enableAudioBtn.addEventListener("click", enableAudio);
-disableAudioBtn.addEventListener("click", disableAudio);
+disableAudioBtn.addEventListener("click", showPage);
+volumeIcon.addEventListener("click", toggleVolume);

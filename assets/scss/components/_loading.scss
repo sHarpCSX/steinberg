@@ -1,3 +1,5 @@
+@use "../abstracts/index" as a;
+
 .loader-wrapper {
   position: absolute;
   top: 80%;
@@ -23,7 +25,7 @@
       .stone {
         height: 70px;
         width: 70px;
-        border: 5px solid $primary-color-blackbg;
+        border: 5px solid a.$primary-color-blackbg;
         border-radius: 55% 45% 60% 40% / 50% 54% 46% 50%;
         animation: loader 2s 1s linear infinite;
       }
@@ -31,7 +33,7 @@
     .line {
       width: 200px;
       height: 0px;
-      border-bottom: 5px solid $primary-color-blackbg;
+      border-bottom: 5px solid a.$primary-color-blackbg;
       border-radius: 5px;
     }
     &::after {
@@ -41,7 +43,7 @@
       left: 97px;
       width: 8px;
       height: 8px;
-      background: $primary-color-blackbg;
+      background: a.$primary-color-blackbg;
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 
       box-shadow: inset 4px -4px 4px black;
@@ -57,7 +59,7 @@
       margin: 0;
 
       .loading {
-        color: $primary-color-blackbg;
+        color: a.$primary-color-blackbg;
         margin-top: 0.5rem;
         margin-left: 5rem;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -67,7 +69,7 @@
         overflow: hidden;
         white-space: nowrap;
         animation-delay: 2s;
-        color: $primary-color-blackbg;
+        color: a.$primary-color-blackbg;
         animation: caret 1.5s step-end infinite alternate-reverse,
           type 1.5s steps(6, end);
         animation-iteration-count: 4, 40, infinite;

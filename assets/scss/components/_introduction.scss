@@ -1,0 +1,161 @@
+@use "../abstracts/index" as a;
+
+#introduction {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  animation: appear 4s linear forwards;
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .introduction_container {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+
+    #drag,
+    #spin {
+      position: relative;
+      display: flex;
+      margin: auto;
+      transform-style: preserve-3d;
+    }
+
+    #spin div {
+      transform-style: preserve-3d;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 8px #fff;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
+      backdrop-filter: blur(2px);
+
+      &.active {
+        /* box-shadow: 2px 2px 15px #fffd; */
+        background: transparent;
+        cursor: pointer;
+        border: none;
+        box-shadow: none;
+        i {
+          color: rgb(1, 149, 149);
+        }
+        p {
+          color: rgba(255, 255, 255, 0.5);
+          letter-spacing: 0.1em;
+        }
+      }
+
+      &#activate_card {
+        background: rgb(255, 255, 255);
+      }
+
+      p {
+        margin-top: 2rem;
+        color: rgb(0, 0, 0);
+        transition: color 0.5s ease-in-out, transform 0.5s ease-in-out,
+          letter-spacing 0.5s ease-in-out;
+        pointer-events: none;
+      }
+      i {
+        color: rgb(0, 0, 0);
+        transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+        pointer-events: none;
+      }
+
+      &:hover {
+        box-shadow: 2px 2px 15px #fffd;
+        background: transparent;
+      }
+      &:hover i {
+        color: rgb(1, 149, 149);
+        transform: scale(1.2);
+        pointer-events: none;
+      }
+      &:hover p {
+        color: rgba(255, 255, 255, 0.5);
+        transform: scale(1);
+        letter-spacing: 0.1em;
+        pointer-events: none;
+      }
+    }
+
+    /*   #ground {
+      width: 900px;
+      height: 900px;
+      position: absolute;
+      top: 130%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotateX(90deg);
+    } */
+
+    @keyframes spin {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+    @keyframes spinRevert {
+      from {
+        transform: rotateY(360deg);
+      }
+      to {
+        transform: rotateY(0deg);
+      }
+    }
+
+    @keyframes disappear {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes appear {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes popout {
+      0% {
+        transform: scale(1) rotateY(20deg) translateZ(0px);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(4) rotateY(20deg) translateZ(0px);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+#threed_content {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  p {
+    color: #fff;
+    font-size: 8em;
+  }
+}
