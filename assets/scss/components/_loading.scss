@@ -2,7 +2,7 @@
 
 .loader-wrapper {
   position: absolute;
-  top: 80%;
+  top: 85%;
   left: 90%;
   height: 2rem;
   width: 2rem;
@@ -17,41 +17,28 @@
     flex-direction: column;
     opacity: 0;
     letter-spacing: 0.2rem;
-    animation: appear 1s linear forwards, rotate 8s 1s linear forwards;
+    transform: rotate(-35.5deg);
+    animation: appear 0.5s linear forwards;
 
     .sq {
       animation: translateeffect 2s 1s linear infinite;
 
       .stone {
-        height: 70px;
-        width: 70px;
-        border: 5px solid a.$primary-color-blackbg;
+        height: 50px;
+        width: 50px;
+        border: 5px solid a.$primary-color-white;
         border-radius: 55% 45% 60% 40% / 50% 54% 46% 50%;
-        animation: loader 2s 1s linear infinite;
+        animation: loader 2s linear infinite;
       }
     }
     .line {
-      width: 200px;
+      width: 150px;
       height: 0px;
-      border-bottom: 5px solid a.$primary-color-blackbg;
+      border-bottom: 5px solid a.$primary-color-white;
       border-radius: 5px;
     }
-    &::after {
-      content: "";
-      position: relative;
-      top: -38px;
-      left: 97px;
-      width: 8px;
-      height: 8px;
-      background: a.$primary-color-blackbg;
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-
-      box-shadow: inset 4px -4px 4px black;
-      animation: move 2s linear infinite;
-      animation-delay: 1.7s;
-    }
     .loading-container {
-      width: 15rem;
+      width: 12rem;
       display: flex;
       justify-content: flex-start;
       align-items: baseline;
@@ -59,31 +46,22 @@
       margin: 0;
 
       .loading {
-        color: a.$primary-color-blackbg;
+        color: a.$primary-color-white;
         margin-top: 0.5rem;
-        margin-left: 5rem;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-left: 3rem;
+        font-family: inherit;
       }
       .dot {
         width: 3ch;
         overflow: hidden;
         white-space: nowrap;
         animation-delay: 2s;
-        color: a.$primary-color-blackbg;
+        color: a.$primary-color-white;
         animation: caret 1.5s step-end infinite alternate-reverse,
           type 1.5s steps(6, end);
         animation-iteration-count: 4, 40, infinite;
       }
     }
-  }
-}
-
-@keyframes move {
-  0% {
-    left: 100px;
-  }
-  100% {
-    left: -100px;
   }
 }
 
@@ -148,26 +126,6 @@
   }
 }
 
-/* @keyframes loader {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(45deg) translateX(-8px);
-  }
-  42% {
-    transform: rotate(90deg);
-  }
-  45% {
-    transform: rotate(82deg);
-  }
-  50% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(90deg);
-  }
-} */
 @keyframes loader {
   0% {
     transform: rotate(0deg);

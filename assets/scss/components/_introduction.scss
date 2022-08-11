@@ -2,6 +2,11 @@
 
 #introduction {
   display: none;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 100vh;
+  height: 100%;
   justify-content: center;
   align-items: center;
   animation: appear 4s linear forwards;
@@ -39,10 +44,13 @@
       width: 100%;
       height: 100%;
       box-shadow: 0 0 8px #fff;
+      /* box-shadow: 2px 2px 15px #fffd; */
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.5);
-      transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
+      /* background: rgba(255, 255, 255, 0.5); */
+      background: transparent;
+      transition: background 1s ease-in-out, box-shadow 2s ease-in-out;
       backdrop-filter: blur(2px);
+      cursor: pointer;
 
       &.active {
         /* box-shadow: 2px 2px 15px #fffd; */
@@ -50,12 +58,16 @@
         cursor: pointer;
         border: none;
         box-shadow: none;
+        text-align: center;
         i {
           color: rgb(1, 149, 149);
         }
         p {
           color: rgba(255, 255, 255, 0.5);
           letter-spacing: 0.1em;
+          &.back {
+            margin-top: -5rem;
+          }
         }
       }
 
@@ -65,13 +77,15 @@
 
       p {
         margin-top: 2rem;
-        color: rgb(0, 0, 0);
+        /* color: rgb(0, 0, 0); */
+        color: rgba(255, 255, 255, 0.5);
         transition: color 0.5s ease-in-out, transform 0.5s ease-in-out,
           letter-spacing 0.5s ease-in-out;
         pointer-events: none;
       }
       i {
-        color: rgb(0, 0, 0);
+        /* color: rgb(0, 0, 0); */
+        color: rgb(1, 149, 149);
         transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
         pointer-events: none;
       }
@@ -93,13 +107,20 @@
       }
     }
 
-    /*   #ground {
+    /* #ground {
       width: 900px;
       height: 900px;
       position: absolute;
-      top: 130%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 100%;
       left: 50%;
       transform: translate(-50%, -50%) rotateX(90deg);
+      font-weight: 500;
+      font-size: 3em;
+      font-family: inherit;
+      color: rgba(255, 255, 255, 0.2);
     } */
 
     @keyframes spin {

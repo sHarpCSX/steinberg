@@ -9,6 +9,7 @@
 #start .welcoming_container {
   text-align: center;
   max-width: 700px;
+  height: 100%;
 }
 #start .welcoming_container p {
   font-size: 2em;
@@ -90,7 +91,7 @@
 }
 .loader-wrapper {
   position: absolute;
-  top: 80%;
+  top: 85%;
   left: 90%;
   height: 2rem;
   width: 2rem;
@@ -105,39 +106,27 @@
   flex-direction: column;
   opacity: 0;
   letter-spacing: 0.2rem;
-  animation: appear 1s linear forwards, rotate 8s 1s linear forwards;
+  transform: rotate(-35.5deg);
+  animation: appear 0.5s linear forwards;
 }
 .loader-wrapper .loader .sq {
   animation: translateeffect 2s 1s linear infinite;
 }
 .loader-wrapper .loader .sq .stone {
-  height: 70px;
-  width: 70px;
-  border: 5px solid rgb(3, 3, 3);
+  height: 50px;
+  width: 50px;
+  border: 5px solid rgb(255, 255, 255);
   border-radius: 55% 45% 60% 40%/50% 54% 46% 50%;
-  animation: loader 2s 1s linear infinite;
+  animation: loader 2s linear infinite;
 }
 .loader-wrapper .loader .line {
-  width: 200px;
+  width: 150px;
   height: 0px;
-  border-bottom: 5px solid rgb(3, 3, 3);
+  border-bottom: 5px solid rgb(255, 255, 255);
   border-radius: 5px;
 }
-.loader-wrapper .loader::after {
-  content: "";
-  position: relative;
-  top: -38px;
-  left: 97px;
-  width: 8px;
-  height: 8px;
-  background: rgb(3, 3, 3);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  box-shadow: inset 4px -4px 4px black;
-  animation: move 2s linear infinite;
-  animation-delay: 1.7s;
-}
 .loader-wrapper .loader .loading-container {
-  width: 15rem;
+  width: 12rem;
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
@@ -145,29 +134,21 @@
   margin: 0;
 }
 .loader-wrapper .loader .loading-container .loading {
-  color: rgb(3, 3, 3);
+  color: rgb(255, 255, 255);
   margin-top: 0.5rem;
-  margin-left: 5rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 3rem;
+  font-family: inherit;
 }
 .loader-wrapper .loader .loading-container .dot {
   width: 3ch;
   overflow: hidden;
   white-space: nowrap;
   animation-delay: 2s;
-  color: rgb(3, 3, 3);
+  color: rgb(255, 255, 255);
   animation: caret 1.5s step-end infinite alternate-reverse, type 1.5s steps(6, end);
   animation-iteration-count: 4, 40, infinite;
 }
 
-@keyframes move {
-  0% {
-    left: 100px;
-  }
-  100% {
-    left: -100px;
-  }
-}
 @keyframes appear {
   0% {
     opacity: 0;
@@ -220,26 +201,6 @@
     transform: translateX(0px);
   }
 }
-/* @keyframes loader {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(45deg) translateX(-8px);
-  }
-  42% {
-    transform: rotate(90deg);
-  }
-  45% {
-    transform: rotate(82deg);
-  }
-  50% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(90deg);
-  }
-} */
 @keyframes loader {
   0% {
     transform: rotate(0deg);
@@ -376,6 +337,11 @@ header i {
 }
 #introduction {
   display: none;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 100vh;
+  height: 100%;
   justify-content: center;
   align-items: center;
   animation: appear 4s linear forwards;
@@ -391,13 +357,20 @@ header i {
 #introduction .introduction_container {
   perspective: 1000px;
   transform-style: preserve-3d;
-  /*   #ground {
+  /* #ground {
     width: 900px;
     height: 900px;
     position: absolute;
-    top: 130%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -50%) rotateX(90deg);
+    font-weight: 500;
+    font-size: 3em;
+    font-family: inherit;
+    color: rgba(255, 255, 255, 0.2);
   } */
 }
 #introduction .introduction_container #drag,
@@ -419,10 +392,13 @@ header i {
   width: 100%;
   height: 100%;
   box-shadow: 0 0 8px #fff;
+  /* box-shadow: 2px 2px 15px #fffd; */
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.5);
-  transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
+  /* background: rgba(255, 255, 255, 0.5); */
+  background: transparent;
+  transition: background 1s ease-in-out, box-shadow 2s ease-in-out;
   backdrop-filter: blur(2px);
+  cursor: pointer;
 }
 #introduction .introduction_container #spin div.active {
   /* box-shadow: 2px 2px 15px #fffd; */
@@ -430,6 +406,7 @@ header i {
   cursor: pointer;
   border: none;
   box-shadow: none;
+  text-align: center;
 }
 #introduction .introduction_container #spin div.active i {
   color: rgb(1, 149, 149);
@@ -438,17 +415,22 @@ header i {
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.1em;
 }
+#introduction .introduction_container #spin div.active p.back {
+  margin-top: -5rem;
+}
 #introduction .introduction_container #spin div#activate_card {
   background: rgb(255, 255, 255);
 }
 #introduction .introduction_container #spin div p {
   margin-top: 2rem;
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
+  color: rgba(255, 255, 255, 0.5);
   transition: color 0.5s ease-in-out, transform 0.5s ease-in-out, letter-spacing 0.5s ease-in-out;
   pointer-events: none;
 }
 #introduction .introduction_container #spin div i {
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
+  color: rgb(1, 149, 149);
   transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
   pointer-events: none;
 }
@@ -547,51 +529,49 @@ header i {
   font-weight: 100;
   font-size: 9rem;
   text-shadow: 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white;
-  animation: goback 7s linear forwards;
-  animation-delay: 10s;
+  animation: goback 4s ease forwards;
+  animation-delay: 3s;
 }
 .background-fill #headline_container #subtitle {
   color: white;
   font-weight: 100;
   font-size: 3rem;
   text-shadow: 0px 0px 1px white;
-  animation: scale 8s ease-in forwards;
-  animation-delay: 8s;
+  animation: disappear 2s ease forwards;
+  animation-delay: 3s;
 }
 
-@keyframes scale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(30);
-  }
-  100% {
-    transform: scale(110) translateX(-3px);
-  }
-}
 @keyframes goback {
   0% {
     color: white;
+    opacity: 1;
   }
   50% {
     text-shadow: none;
-    opacity: 1;
+    opacity: 0;
   }
   60% {
     opacity: 0;
-    transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0) scale(1);
   }
   80% {
-    opacity: 0;
-    transform: translateY(-175px) translateX(45px);
+    transform: translateY(-160px) translateX(-40%) scale(0.7);
     color: rgba(255, 255, 255, 0.2);
+    opacity: 0;
   }
   100% {
     color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-175px) translateX(45px);
+    transform: translateY(-160px) translateX(-40%) scale(0.7);
     text-shadow: none;
     opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 * {
@@ -604,7 +584,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: black;
 }
 
@@ -630,6 +610,20 @@ main {
   transform: rotateY(180deg);
   opacity: 0.3;
   z-index: -100;
+}
+
+#climb {
+  position: fixed;
+  top: 0;
+  left: 5%;
+  width: 377.4992126px;
+  height: 100%;
+  background-image: url(/images/climber/climber1.png);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: 100% 100%;
+  opacity: 1;
+  z-index: 100;
 }
 
 ol {
@@ -658,6 +652,7 @@ ol .list-item .list-item-element {
   text-align: center;
   width: 100%;
   height: 100%;
+  border: 1px solid white;
 }
 ol .list-item .list-item-element p {
   color: white;

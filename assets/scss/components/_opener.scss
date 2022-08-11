@@ -29,52 +29,50 @@
         0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white,
         0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white,
         0px 0px 1px white, 0px 0px 1px white;
-      animation: goback 7s linear forwards;
-      animation-delay: 10s;
+      animation: goback 4s ease forwards;
+      animation-delay: 3s;
     }
     #subtitle {
       color: white;
       font-weight: 100;
       font-size: 3rem;
       text-shadow: 0px 0px 1px white;
-      animation: scale 8s ease-in forwards;
-      animation-delay: 8s;
+      animation: disappear 2s ease forwards;
+      animation-delay: 3s;
     }
   }
 }
 
-@keyframes scale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(30);
-  }
-  100% {
-    transform: scale(110) translateX(-3px);
-  }
-}
 @keyframes goback {
   0% {
     color: white;
+    opacity: 1;
   }
   50% {
     text-shadow: none;
-    opacity: 1;
+    opacity: 0;
   }
   60% {
     opacity: 0;
-    transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0) scale(1);
   }
   80% {
-    opacity: 0;
-    transform: translateY(-175px) translateX(45px);
+    transform: translateY(-160px) translateX(-40%) scale(0.7);
     color: rgba(255, 255, 255, 0.2);
+    opacity: 0;
   }
   100% {
     color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-175px) translateX(45px);
+    transform: translateY(-160px) translateX(-40%) scale(0.7);
     text-shadow: none;
     opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

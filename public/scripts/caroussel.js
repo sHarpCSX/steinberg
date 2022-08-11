@@ -1,38 +1,33 @@
-let autoRotate = true;
-let isStart = true;
-let isSpining = true;
-let isClicked = false;
-
-let radius = 340;
-const rotateSpeed = -60;
-const divWidth = 180;
-const divHeight = 240;
-
-const introSectionElement = document.getElementById("introduction");
-const dragElement = document.getElementById("drag");
-const spinElement = document.getElementById("spin");
-const activateElement = document.getElementById("activate_card");
-const threedElement = document.getElementById("threed_content");
-const conceptionElement = document.getElementById("conception");
-
-let activeElement;
-let divElement = spinElement.getElementsByTagName("div");
-const allDivElements = [...divElement];
-const listItems = document.querySelectorAll(".list-item");
-
-spinElement.style.width = divWidth + "px";
-spinElement.style.height = divHeight + "px";
-
-/* const ground = document.getElementById("ground");
-ground.style.width = radius * 3 + "px";
-ground.style.height = radius * 3 + "px"; */
-
 setTimeout(() => {
   introSectionElement.style.display = "flex";
-}, 3000);
+}, 7000);
 
-function init(delayTime) {
+async function init(delayTime) {
   isClicked = false;
+
+  if (activeElement >= 0) {
+    autoRotate = true;
+    allDivElements[activeElement].removeEventListener("click", showIntro);
+    allDivElements[activeElement].addEventListener("click", openPage);
+    allDivElements[activeElement].classList.remove("active");
+    dragElement.style.transform = "none";
+    dragElement.style.transition = "none";
+    /*  applyTransform(dragElement); */
+
+    for (let i = 0; i < allDivElements.length; i++) {
+      allDivElements[i].style.animation = "appear 2s linear forwards";
+
+      for (const listItem of listItems) {
+        listItem.style.display = "none";
+      }
+
+      setTimeout(() => {
+        allDivElements[i].style.display = "flex";
+      }, ((allDivElements.length - i) / 4) * 1000);
+    }
+
+    activeElement = -1;
+  }
   if (isStart) {
     allDivElements.pop();
     isStart = false;
@@ -62,20 +57,33 @@ function init(delayTime) {
   }
 }
 
-function openPage(e) {
+async function openPage(e) {
   isClicked = true;
-  /* isSpining = false; */
   autoRotate = false;
-
-  (sX = 0), (sY = 0), (nY = 0), (desX = 0), (desY = 0), (tX = 0), (tY = 10);
+  isSpining = false;
+  /* loader.style.display = "flex"; */
 
   for (let i = 0; i < allDivElements.length; i++) {
-    spinElement.style.animation = "none";
     if (e.target.dataset.id === allDivElements[i].dataset.id) {
-      allDivElements[i].classList.add("active");
-      allDivElements[i].style.transform =
+      activeElement = i;
+      allDivElements[activeElement].style.pointerEvents = "none";
+      allDivElements[activeElement].classList.add("active");
+      allDivElements[activeElement].style.transform =
         "rotateY(0deg) rotateX(0deg) translateZ(0px) translateY(-320px)";
-      allDivElements[i].style.transition = "transform 3s";
+      allDivElements[activeElement].style.transition = "transform 3s";
+      setTimeout(() => {
+        /* loader.style.display = "none"; */
+        allDivElements[activeElement].removeEventListener("click", openPage);
+        allDivElements[activeElement].addEventListener("click", showIntro);
+        allDivElements[activeElement].style.pointerEvents = "visible";
+
+        for (const listItem of listItems) {
+          if (listItem.dataset.id === allDivElements[activeElement].dataset.id)
+            listItem.style.display = "flex";
+        }
+        isSpining = true;
+        sX, sY, nY, (desX = 0), (desY = 0), (tX = 0), (tY = 0);
+      }, 3000);
 
       try {
         setTimeout(() => {
@@ -102,13 +110,15 @@ function openPage(e) {
       }
     }
   }
+  spinElement.style.animation = "none";
 }
 async function showIntro() {
-  isClicked = true;
   setTimeout(init, 100);
-  setTimeout(() => {
-    activateElement.style.display = "none";
-  }, 300);
+  if (isStart) {
+    setTimeout(() => {
+      activateElement.style.display = "none";
+    }, 300);
+  }
 }
 
 function applyTransform(obj) {
@@ -127,11 +137,11 @@ let sX,
   desX = 0,
   desY = 0,
   tX = 0,
-  tY = 10;
+  tY = 0;
 
 document.onpointerdown = async function (e) {
+  clearInterval(dragElement.timer);
   if (!isClicked) {
-    clearInterval(dragElement.timer);
     e = e || window.event;
     let sX = e.clientX,
       sY = e.clientY;
@@ -180,8 +190,8 @@ document.onmousewheel = function (e) {
     let d = e.wheelDelta / 10 || -e.detail;
     radius -= d;
     init(1);
-    console.log(radius);
   }
 };
 
+// Eventlistener
 activateElement.addEventListener("click", showIntro);

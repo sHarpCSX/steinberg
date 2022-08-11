@@ -1,24 +1,3 @@
-const player = document.querySelector(".player");
-const playpause_btn = document.querySelector(".playpause-track");
-const slider = document.querySelector(".slider_container");
-const volume_slider = document.querySelector(".volume_slider");
-const volumeIcon = document.querySelector(".volume_container");
-const enableAudioBtn = document.getElementById("audio-enable_btn");
-const disableAudioBtn = document.getElementById("audio-disable_btn");
-const startPage = document.getElementById("start");
-const header = document.querySelector("header");
-const main = document.querySelector("main");
-
-let isPlaying = false;
-let track_index = 0;
-let curr_track = document.createElement("audio");
-let previousVolume;
-let previousSliderValue;
-
-const music_list = [
-  { name: "Danheim - Ulvekald", source: "/audio/danheim.mp3" },
-];
-
 loadTrack(track_index);
 
 function loadTrack() {
@@ -43,7 +22,6 @@ function pauseTrack() {
   curr_track.pause();
   isPlaying = false;
   playpause_btn.innerHTML = '<i class="fa-solid fa-circle-play fa-xl"></i>';
-  console.log("test");
 }
 
 function setVolume() {
@@ -88,6 +66,7 @@ function enableAudio() {
   playTrack();
 }
 
+// Eventlistener
 enableAudioBtn.addEventListener("click", enableAudio);
 disableAudioBtn.addEventListener("click", showPage);
 volumeIcon.addEventListener("click", toggleVolume);
