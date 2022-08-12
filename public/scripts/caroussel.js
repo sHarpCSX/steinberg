@@ -1,10 +1,13 @@
+// opening animation for title and appearance of caroussel
 setTimeout(() => {
   introSectionElement.style.display = "flex";
 }, 7000);
 
+// init function to create the caroussel
 async function init(delayTime) {
   isClicked = false;
 
+  // checking if the caroussel is in initial state or if one card is already active and has to go back in line
   if (activeElement >= 0) {
     autoRotate = true;
     allDivElements[activeElement].removeEventListener("click", showIntro);
@@ -12,7 +15,6 @@ async function init(delayTime) {
     allDivElements[activeElement].classList.remove("active");
     dragElement.style.transform = "none";
     dragElement.style.transition = "none";
-    /*  applyTransform(dragElement); */
 
     for (let i = 0; i < allDivElements.length; i++) {
       allDivElements[i].style.animation = "appear 2s linear forwards";
@@ -28,6 +30,7 @@ async function init(delayTime) {
 
     activeElement = -1;
   }
+  // checking if it's the start initialization
   if (isStart) {
     allDivElements.pop();
     isStart = false;
@@ -37,6 +40,7 @@ async function init(delayTime) {
     });
   }
 
+  // autoRotate function for caroussel. Especially when one card is activated it's necessary to stop the autorotaion. Otherwise the animations and transitions would not be smooth
   if (autoRotate) {
     let animationName = rotateSpeed > 0 ? "spin" : "spinRevert";
     spinElement.style.animation = `${animationName} ${Math.abs(
@@ -44,6 +48,7 @@ async function init(delayTime) {
     )}s infinite linear`;
   }
 
+  // bringing the cards in the right position around the center
   for (let i = 0; i < allDivElements.length; i++) {
     allDivElements[i].style.transform =
       "rotateY(" +
@@ -59,6 +64,7 @@ async function init(delayTime) {
   }
 }
 
+// function to activate a card and to show the content
 async function openPage(e) {
   isClicked = true;
   autoRotate = false;
@@ -115,6 +121,9 @@ async function openPage(e) {
   }
   spinElement.style.animation = "none";
 }
+
+// starting initialization.
+//TODO: Here is still a placeholder ("activateElement"). Not sure yet how I want it to appear. yet to change.
 async function showIntro() {
   setTimeout(init, 10);
   if (isStart) {
@@ -124,6 +133,7 @@ async function showIntro() {
   }
 }
 
+// applying the right x and y angles
 function applyTransform(obj) {
   if (tY > 180) tY = 180;
   if (tY < 0) tY = 0;
@@ -131,9 +141,12 @@ function applyTransform(obj) {
   obj.style.transform = "rotateX(" + -tY + "deg) rotateY(" + tX + "deg)";
 }
 
+// spining animation what makes it a caroussel.
 function playSpin() {
   spinElement.style.animationPlayState = isSpining ? "running" : "paused";
 }
+
+// initial values for positioning
 let sX,
   sY,
   nY,
@@ -142,6 +155,7 @@ let sX,
   tX = 0,
   tY = 0;
 
+// mouseevents to spin/drag the caroussel around
 document.onpointerdown = async function (e) {
   clearInterval(dragElement.timer);
   if (!isClicked) {
@@ -187,6 +201,7 @@ document.onpointerdown = async function (e) {
   }
 };
 
+// scrollevent to increase/decrease distance of the cards from the center
 document.onmousewheel = function (e) {
   if (!isClicked) {
     e = e || window.event;

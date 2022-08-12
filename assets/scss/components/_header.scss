@@ -1,5 +1,7 @@
 @use "../abstracts/index" as a;
 
+/* Was more used in the first concept. now its actually only the audio-player. It must not have the position fixed anymore and some small other points, but I will let it like this as it works anymways */
+
 header {
   position: fixed;
   top: 0;

@@ -24,7 +24,7 @@
     #title {
       color: a.$primary-color-white;
       font-weight: 100;
-      font-size: 9rem;
+      font-size: 7em;
       text-shadow: 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white,
         0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white,
         0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white,
@@ -35,7 +35,7 @@
     #subtitle {
       color: a.$primary-color-white;
       font-weight: 100;
-      font-size: 3rem;
+      font-size: 3em;
       text-shadow: 0px 0px 1px white;
       animation: disappear 2s ease forwards;
       animation-delay: 3s;
@@ -57,13 +57,13 @@
     transform: translateY(0) translateX(0) scale(1);
   }
   80% {
-    transform: translateY(-160px) translateX(-35%) scale(0.7);
+    transform: translateY(-160px) translateX(-50%) scale(0.7);
     color: a.$primary-color-grey300;
     opacity: 0;
   }
   100% {
     color: a.$primary-color-grey300;
-    transform: translateY(-160px) translateX(-35%) scale(0.7);
+    transform: translateY(-160px) translateX(-50%) scale(0.7);
     text-shadow: none;
     opacity: 1;
   }

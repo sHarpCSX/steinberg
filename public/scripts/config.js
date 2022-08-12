@@ -21,6 +21,7 @@ const music_list = [
 ];
 
 // climber
+// yet to fill
 
 // DOM-variables
 // caroussel
@@ -53,3 +54,4 @@ const header = document.querySelector("header");
 const main = document.querySelector("main");
 
 // climber
+// yet to fill

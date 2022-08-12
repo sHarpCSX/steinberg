@@ -1,5 +1,7 @@
 @use "../abstracts/index" as a;
 
+/* called it introduction at the first concept but actually it's the caroussel slider/ the main area now */
+
 #introduction {
   display: none;
   position: absolute;
@@ -166,17 +168,5 @@
         opacity: 0;
       }
     }
-  }
-}
-
-#threed_content {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  color: a.$primary-color-white;
-
-  p {
-    color: a.$primary-color-white;
-    font-size: 8em;
   }
 }

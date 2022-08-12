@@ -1,11 +1,9 @@
 // npm install -D sass
 @use "./abstracts/index" as a;
 @use "components/start-container";
-@use "components/background";
 @use "components/loading";
 @use "components/header";
 @use "components/introduction";
-@use "components/services";
 @use "components/opener";
 @use "components/list-items";
 
@@ -30,6 +28,10 @@ main {
   width: 100%;
   height: 100%;
   overflow: hidden;
+
+  h1 {
+    margin: 0;
+  }
 }
 #mountain {
   position: absolute;
@@ -50,7 +52,7 @@ main {
   position: fixed;
   top: 0;
   left: 5%;
-  width: 220px;
+  width: 200px;
   height: 100%;
   background-image: url(/images/climber/climber1.png);
   background-repeat: no-repeat;

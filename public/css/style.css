@@ -1,3 +1,4 @@
+/* not necessary to forward it via an additional index-file but in case there will come more files which will need to be forwarded I let it for now */
 #start {
   box-sizing: border-box;
   display: flex;
@@ -45,50 +46,7 @@
   height: 100%;
 }
 
-.background-clouds {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 50;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-.background-clouds .cloud {
-  position: absolute;
-  filter: brightness(0) saturate(100%) invert(23%) sepia(24%) saturate(827%) hue-rotate(137deg) brightness(98%) contrast(99%);
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Smoke-Element.png");
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-size: contain;
-}
-.background-clouds .cloud:nth-child(1) {
-  width: 2900px;
-  height: 2900px;
-  top: -600px;
-  left: -600px;
-  animation: moveCloud 25s linear infinite;
-}
-.background-clouds .cloud:nth-child(2) {
-  width: 1500px;
-  height: 1500px;
-  top: -100px;
-  left: -150px;
-  animation: moveCloud 20s linear infinite;
-}
-
-@keyframes moveCloud {
-  0% {
-    /* transform: rotate(0deg); */
-    transform: translateX(-1800px);
-  }
-  100% {
-    /* transform: rotate(360deg); */
-    transform: translateX(3000px);
-  }
-}
+/* funny loading animation. Not in use atm */
 .loader-wrapper {
   position: absolute;
   top: 85%;
@@ -254,6 +212,7 @@
     transform: rotate(360deg);
   }
 }
+/* Was more used in the first concept. now its actually only the audio-player. It must not have the position fixed anymore and some small other points, but I will let it like this as it works anymways */
 header {
   position: fixed;
   top: 0;
@@ -335,6 +294,7 @@ header i {
     transform: translateX(-160px);
   }
 }
+/* called it introduction at the first concept but actually it's the caroussel slider/ the main area now */
 #introduction {
   display: none;
   position: absolute;
@@ -492,17 +452,6 @@ header i {
   }
 }
 
-#threed_content {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  color: rgb(255, 255, 255);
-}
-#threed_content p {
-  color: rgb(255, 255, 255);
-  font-size: 8em;
-}
-
 .background-fill {
   position: absolute;
   top: 0;
@@ -527,7 +476,7 @@ header i {
 .background-fill #headline_container #title {
   color: rgb(255, 255, 255);
   font-weight: 100;
-  font-size: 9rem;
+  font-size: 7em;
   text-shadow: 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white, 0px 0px 1px white;
   animation: goback 4s ease forwards;
   animation-delay: 3s;
@@ -535,7 +484,7 @@ header i {
 .background-fill #headline_container #subtitle {
   color: rgb(255, 255, 255);
   font-weight: 100;
-  font-size: 3rem;
+  font-size: 3em;
   text-shadow: 0px 0px 1px white;
   animation: disappear 2s ease forwards;
   animation-delay: 3s;
@@ -555,13 +504,13 @@ header i {
     transform: translateY(0) translateX(0) scale(1);
   }
   80% {
-    transform: translateY(-160px) translateX(-35%) scale(0.7);
+    transform: translateY(-160px) translateX(-50%) scale(0.7);
     color: rgba(255, 255, 255, 0.2);
     opacity: 0;
   }
   100% {
     color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-160px) translateX(-35%) scale(0.7);
+    transform: translateY(-160px) translateX(-50%) scale(0.7);
     text-shadow: none;
     opacity: 1;
   }
@@ -644,6 +593,9 @@ main {
   height: 100%;
   overflow: hidden;
 }
+main h1 {
+  margin: 0;
+}
 
 #mountain {
   position: absolute;
@@ -664,7 +616,7 @@ main {
   position: fixed;
   top: 0;
   left: 5%;
-  width: 220px;
+  width: 200px;
   height: 100%;
   background-image: url(/images/climber/climber1.png);
   background-repeat: no-repeat;
