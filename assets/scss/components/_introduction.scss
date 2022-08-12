@@ -60,10 +60,10 @@
         box-shadow: none;
         text-align: center;
         i {
-          color: rgb(1, 149, 149);
+          color: a.$primary-color-greenblue;
         }
         p {
-          color: rgba(255, 255, 255, 0.5);
+          color: a.$primary-color-grey100;
           letter-spacing: 0.1em;
           &.back {
             margin-top: -5rem;
@@ -72,20 +72,20 @@
       }
 
       &#activate_card {
-        background: rgb(255, 255, 255);
+        background: a.$primary-color-white;
       }
 
       p {
         margin-top: 2rem;
         /* color: rgb(0, 0, 0); */
-        color: rgba(255, 255, 255, 0.5);
+        color: a.$primary-color-grey100;
         transition: color 0.5s ease-in-out, transform 0.5s ease-in-out,
           letter-spacing 0.5s ease-in-out;
         pointer-events: none;
       }
       i {
         /* color: rgb(0, 0, 0); */
-        color: rgb(1, 149, 149);
+        color: a.$primary-color-greenblue;
         transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
         pointer-events: none;
       }
@@ -95,12 +95,12 @@
         background: transparent;
       }
       &:hover i {
-        color: rgb(1, 149, 149);
+        color: a.$primary-color-greenblue;
         transform: scale(1.2);
         pointer-events: none;
       }
       &:hover p {
-        color: rgba(255, 255, 255, 0.5);
+        color: a.$primary-color-grey100;
         transform: scale(1);
         letter-spacing: 0.1em;
         pointer-events: none;
@@ -173,10 +173,10 @@
   display: none;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: a.$primary-color-white;
 
   p {
-    color: #fff;
+    color: a.$primary-color-white;
     font-size: 8em;
   }
 }

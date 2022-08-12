@@ -7,6 +7,7 @@
 @use "components/introduction";
 @use "components/services";
 @use "components/opener";
+@use "components/list-items";
 
 * {
   /* font-family: "Lato", sans-serif; */
@@ -19,7 +20,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  background: black;
+  background: a.$primary-color-black;
 }
 
 main {
@@ -38,7 +39,7 @@ main {
   height: 100%;
   background-image: url(/images/mountain.jpg);
   background-repeat: no-repeat;
-  object-fit: cover;
+  object-fit: contain;
   background-size: 100% 100%;
   transform: rotateY(180deg);
   opacity: 0.3;
@@ -49,13 +50,12 @@ main {
   position: fixed;
   top: 0;
   left: 5%;
-  width: 377.4992126px;
+  width: 220px;
   height: 100%;
   background-image: url(/images/climber/climber1.png);
   background-repeat: no-repeat;
   object-fit: cover;
   background-size: 100% 100%;
-  opacity: 1;
   z-index: 100;
 }
 
@@ -74,23 +74,5 @@ ol {
     height: 100%;
     /* border: 1px solid white; */
     padding: auto;
-  }
-
-  .list-item {
-    display: none;
-
-    .list-item-element {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      width: 100%;
-      height: 100%;
-      border: 1px solid white;
-
-      p {
-        color: white;
-      }
-    }
   }
 }

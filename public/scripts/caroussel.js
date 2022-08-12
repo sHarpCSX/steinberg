@@ -48,6 +48,8 @@ async function init(delayTime) {
     allDivElements[i].style.transform =
       "rotateY(" +
       -i * (360 / allDivElements.length) +
+      "deg) rotateX(" +
+      -tY +
       "deg) translateZ(" +
       radius +
       "px)";
@@ -61,6 +63,7 @@ async function openPage(e) {
   isClicked = true;
   autoRotate = false;
   isSpining = false;
+
   /* loader.style.display = "flex"; */
 
   for (let i = 0; i < allDivElements.length; i++) {
@@ -113,7 +116,7 @@ async function openPage(e) {
   spinElement.style.animation = "none";
 }
 async function showIntro() {
-  setTimeout(init, 100);
+  setTimeout(init, 10);
   if (isStart) {
     setTimeout(() => {
       activateElement.style.display = "none";
