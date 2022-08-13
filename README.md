@@ -1,6 +1,6 @@
 # steinberg
 
-A project to get in touch with sass and to try out some new techniques like draggable caroussel slider and animations via sprite sheet. This one is not responsive yet and definately not finished. Looking forward to change these points.
+A project to get in touch with sass and to try out some new techniques like draggable caroussel slider and animations via sprite sheet. The website is not responsive yet and definitely not finished. Looking forward to change these points.
 
 The website starts with a opener which asks the visitor if he/she would like to visit the website with background music. In the first concept were moving clouds in the background with a darker atmosphere. While I was working out different concepts I was listening to Danheim. I realized, that it fits very well to the whole szenery so I decided to implement the music. In case I want to publish the website I have asked the Artist behind Danheim if I may use his music on my website. He agreed. So shoutout to Danheim and many thanks! (even if it won't be the case here)
 
