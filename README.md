@@ -4,7 +4,7 @@ A project to get in touch with sass and to try out some new techniques like drag
 
 The website starts with a opener which asks the visitor if he/she would like to visit the website with background music. In the first concept were moving clouds in the background with a darker atmosphere. While I was working out different concepts I was listening to Danheim. I realized, that it fits very well to the whole szenery so I decided to implement the music. In case I want to publish the website I have asked the Artist behind Danheim if I may use his music on my website. He agreed. So shoutout to Danheim and many thanks! (even if it won't be the case here)
 
-After deciding, if music or not, the visitor comes to the main section. As you can see there are no moving clouds. That's because I changed the whole concept I had more fun working on. The music player is on the right upper side. I let it there. The volume slider and the buttons are fully working. The volume-button also change by volume-change.
+After deciding, if music or not, the visitor comes to the main section. As you can see there are no moving clouds. That's because I changed the whole concept to a concept I had more fun working on. The music player is on the right upper side. I let it there. The volume slider and the buttons are fully working. The volume-button also change by volume-change.
 
 ![](screenshots/start.PNG)
 
