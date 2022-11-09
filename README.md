@@ -8,7 +8,7 @@ After deciding, if music or not, the visitor comes to the main section. As you c
 
 ![](screenshots/start.PNG)
 
-On the left side is a szenery witch a climber inside a rock crevice. Here I want to use sprite sheet to get different animations. The scenery will work as a loading animation. Also the climber will get different hover-animations. Thats whats taking time (because I need a lot of different frames to get a smooth animation) and what will come later.
+On the left side is a szenery with a climber inside a rock crevice. Here I want to use sprite sheet to get different animations. The scenery will work as a loading animation. Also the climber will get different hover-animations. Thats whats taking time (because I need a lot of different frames to get a smooth animation) and what will come later.
 
 The company name in the middle will disappear and a dragable caroussel slider will appear.
 
